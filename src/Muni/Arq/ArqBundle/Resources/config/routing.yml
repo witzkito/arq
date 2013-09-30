@@ -1,0 +1,3 @@
+arq_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ArqBundle:Default:index }

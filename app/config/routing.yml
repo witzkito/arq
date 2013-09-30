@@ -1,0 +1,4 @@
+arq:
+    resource: "@ArqBundle/Resources/config/routing.yml"
+    prefix:   /
+
