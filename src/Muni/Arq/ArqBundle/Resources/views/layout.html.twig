@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/arq/css/estilo.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <div id="encabezado">
+        {% block encabezado %}Encabezado{% endblock %}
+    </div>
+
+    <div id="datos">
+        {% block datos %}Datos{% endblock %}
+    </div>
+
+    <div id="pie">
+        {% block pie %}Pie{% endblock %}
+    </div>
+
+{% endblock %}
