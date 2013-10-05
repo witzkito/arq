@@ -1,0 +1,22 @@
+Muni\Arq\ArqBundle\Entity\Calle:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nombreCalle:
+            type: string
+            length: '100'
+            column: nombre_calle
+        numeroInicio:
+            type: string
+            length: '10'
+            column: numero_inicio
+        numeroFin:
+            type: string
+            length: '10'
+            column: numero_fin
+    lifecycleCallbacks: {  }
