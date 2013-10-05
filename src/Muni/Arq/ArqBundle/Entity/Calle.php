@@ -24,9 +24,9 @@ class Calle
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=100)
+     * @ORM\Column(name="nombreCalle", type="string", length=100)
      */
-    private $nombre;
+    private $nombreCalle;
 
     /**
      * @var string
@@ -61,7 +61,7 @@ class Calle
      */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->nombreCalle = $nombre;
     
         return $this;
     }
@@ -73,7 +73,7 @@ class Calle
      */
     public function getNombre()
     {
-        return $this->nombre;
+        return $this->nombreCalle;
     }
 
     /**
