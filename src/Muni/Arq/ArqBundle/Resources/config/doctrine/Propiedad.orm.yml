@@ -1,0 +1,31 @@
+Muni\Arq\ArqBundle\Entity\Propiedad:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        numero:
+            type: string
+            length: '10'
+        seccion:
+            type: string
+            length: '10'
+        manzana:
+            type: string
+            length: '10'
+        parcela:
+            type: string
+            length: '10'
+        lote:
+            type: string
+            length: '10'
+        categoria:
+            type: string
+            length: '45'
+        partida:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

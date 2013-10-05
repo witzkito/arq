@@ -6,26 +6,39 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Calle
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Muni\Arq\ArqBundle\Entity\CalleRepository")
  */
 class Calle
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100)
      */
-    private $nombreCalle;
+    private $nombre;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="numero_inicio", type="string", length=10)
      */
     private $numeroInicio;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="numero_fin", type="string", length=10)
      */
     private $numeroFin;
 
@@ -41,26 +54,26 @@ class Calle
     }
 
     /**
-     * Set nombreCalle
+     * Set nombre
      *
-     * @param string $nombreCalle
+     * @param string $nombre
      * @return Calle
      */
-    public function setNombreCalle($nombreCalle)
+    public function setNombre($nombre)
     {
-        $this->nombreCalle = $nombreCalle;
+        $this->nombre = $nombre;
     
         return $this;
     }
 
     /**
-     * Get nombreCalle
+     * Get nombre
      *
      * @return string 
      */
-    public function getNombreCalle()
+    public function getNombre()
     {
-        return $this->nombreCalle;
+        return $this->nombre;
     }
 
     /**
@@ -108,4 +121,23 @@ class Calle
     {
         return $this->numeroFin;
     }
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Propiedad", mappedBy="Calle")
+     */
+    private $propiedad;
+    public function __construct()
+    {
+        $this->propiedad = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    public function addPropiedad(\Mdw\BlogBundle\Entity\Comments $propiedad)
+    {
+        $this->propiedad[] = $propiedad;
+    }
+
+    public function getPropiedad()
+    {
+        return $this->propiedad;
+    }
+   
 }

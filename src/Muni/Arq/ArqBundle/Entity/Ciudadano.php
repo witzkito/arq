@@ -271,4 +271,22 @@ class Ciudadano
     {
         return $this->email;
     }
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Propiedad", mappedBy="Ciudadano")
+     */
+    private $propiedad;
+    public function __construct()
+    {
+        $this->propiedad = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    public function addPropiedad(\Mdw\BlogBundle\Entity\Comments $propiedad)
+    {
+        $this->propiedad[] = $propiedad;
+    }
+
+    public function getPropiedad()
+    {
+        return $this->propiedad;
+    }
 }
