@@ -1,3 +1,7 @@
 arq_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ArqBundle:Default:index }
+    pattern:  /formulario
+    defaults: { _controller: ArqBundle:Default:principal }
+    
+arq_crearCalle:
+    pattern: /formulario/crearCalle
+    defaults: { _controller: ArqBundle:Default:create }

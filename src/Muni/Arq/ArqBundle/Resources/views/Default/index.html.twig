@@ -1,5 +1,17 @@
 {% extends "ArqBundle::layout.html.twig" %}
 
+{% block encabezado %}
+    Pagina Principal
+{% endblock %}
+
 {% block datos %}
-    Hello {{ name }}!
+ <div><a href="{{url('arq_homepage')}}">Home</a></div>  
+ <div> <a href="{{url('arq_crearCalle')}}">Crear Calle</a></div>
+
+{% endblock %}
+
+
+{% block pie %}
+    Probando 3
+
 {% endblock %}
